@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+  }
+  
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 0;
+    background-color: transparent;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    z-index: 999;
+  }
+  
+  nav.scrolled {
+    background-color: rgba(20, 20, 20, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 40px;
+  }
+  
+  .nav-list li {
+    position: relative;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    padding: 8px;
+    transition: color 0.3s ease;
+  }
+  
+  nav:not(.scrolled) .nav-link {
+    color: black;
+  }
+  
+  .nav-link:hover {
+    color: #00bfff;
+  }
+  
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: #00bfff;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+  
+  .nav-link.active {
+    color: #00bfff;
+  }
+  
+  section {
+    height: 100vh;
+    padding: 80px 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    scroll-margin-top: 80px;
+    text-align: justify; 
+  }
+body.dark {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  
+  body.dark nav.scrolled {
+    background-color: rgba(0, 0, 0, 0.85);
+  }
+  
+  body.dark .nav-link {
+    color: #e0e0e0;
+  }
+  
+  body.dark .nav-link.active,
+  body.dark .nav-link:hover {
+    color: #00bfff;
+  }
+  
+  body.dark .btn {
+    background-color: #00bfff;
+    color: #fff;
+  }
+  
+  #theme-toggle {
+    position: absolute;
+    right: 20px;
+    top: 12px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: inherit;
+  }
+    
+  
+  
